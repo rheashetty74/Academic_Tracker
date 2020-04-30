@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Academic Tracker</string>
+    <string name="register">Sign Up</string>
 </resources>
