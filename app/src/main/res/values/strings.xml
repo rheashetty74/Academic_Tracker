@@ -9,4 +9,11 @@
     <string name="login">Log In</string>
     <string name="sign_up_text">Don\'t have an account? Sign Up here:</string>
     <string name="login_error">Error: Email and/or Password incorrect. Please Try Again</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_notes">Notes</string>
+    <string name="title_discussion">Discussion</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="course_list">Course List</string>
+    <string name="semester_spring_2020">Spring 2020</string>
 </resources>

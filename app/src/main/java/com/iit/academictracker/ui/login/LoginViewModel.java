@@ -1,4 +1,4 @@
-package com.iit.academictracker.view_models;
+package com.iit.academictracker.ui.login;
 
 import com.iit.academictracker.data_models.Login;
 import com.iit.academictracker.repositories.LoginRepository;

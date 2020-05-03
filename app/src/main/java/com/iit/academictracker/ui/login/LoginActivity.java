@@ -1,4 +1,4 @@
-package com.iit.academictracker.views;
+package com.iit.academictracker.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.iit.academictracker.R;
 import com.iit.academictracker.data_models.Login;
-import com.iit.academictracker.view_models.LoginViewModel;
+import com.iit.academictracker.ui.courseinfo.CourseInfoActivity;
+import com.iit.academictracker.ui.registration.RegistrationActivity;
+import com.iit.academictracker.ui.NavigationActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
                         password.getText().toString());
                 boolean response = loginViewModel.verifyLoginInfo(loginInfo);
                 if (response) {
-                    Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                    //To-DO: Go to next screen
+                    Intent intent = new Intent(LoginActivity.this, CourseInfoActivity.class);
+                    startActivity(intent);
                 } else {
                     loginStatus.setText(getString(R.string.login_error));
                     loginStatus.setError("");

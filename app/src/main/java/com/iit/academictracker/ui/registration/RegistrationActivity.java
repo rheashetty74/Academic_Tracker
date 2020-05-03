@@ -1,7 +1,8 @@
-package com.iit.academictracker.views;
+package com.iit.academictracker.ui.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +11,8 @@ import android.widget.Toast;
 
 import com.iit.academictracker.R;
 import com.iit.academictracker.data_models.Registration;
-import com.iit.academictracker.view_models.RegistrationViewModel;
-import com.iit.academictracker.view_models.RegistrationViewModel;
+import com.iit.academictracker.ui.NavigationActivity;
+import com.iit.academictracker.ui.courseinfo.CourseInfoActivity;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -44,8 +45,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 boolean response = registrationViewModel.verifyRegistrationInfo(regInfo);
 
                 if (response) {
-                    Toast.makeText(RegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                    //TO-DO: Go to next activity
+                    Intent intent = new Intent(RegistrationActivity.this, CourseInfoActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(RegistrationActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                 }
