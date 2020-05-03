@@ -1,7 +1,7 @@
 package com.iit.academictracker.view_models;
 
 import com.iit.academictracker.data_models.Registration;
-import com.iit.academictracker.repositories.RegisterationRepository;
+import com.iit.academictracker.repositories.RegistrationRepository;
 
 /**
  * This ViewModel is used for registeration of the user.
@@ -9,13 +9,13 @@ import com.iit.academictracker.repositories.RegisterationRepository;
  */
 
 public class RegistrationViewModel {
-    private RegisterationRepository reg_repo;
+    private RegistrationRepository regRepo;
 
     public RegistrationViewModel() {
-        reg_repo = new RegisterationRepository();
+        regRepo = new RegistrationRepository();
     }
 
-    public boolean verifyRegistrationInfo(Registration reg_info) {
-        return reg_repo.verifyRegistrationInfo(reg_info);
+    public boolean verifyRegistrationInfo(Registration regInfo) {
+        return regRepo.verifyRegistrationInfo(regInfo);
     }
 }

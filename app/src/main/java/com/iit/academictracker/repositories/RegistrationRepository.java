@@ -12,30 +12,30 @@ import com.iit.academictracker.data_models.User;
  * to the database
  */
 
-public class RegisterationRepository {
+public class RegistrationRepository {
     private String TAG = "RegistrationRepository";
     private SchoolServer server;
 
-    public RegisterationRepository() {
+    public RegistrationRepository() {
         server = new SchoolServer();
     }
 
-    public boolean verifyRegistrationInfo(Registration reg_info) {
-        boolean response = server.verifyRegistrationInfo(reg_info);
+    public boolean verifyRegistrationInfo(Registration regInfo) {
+        boolean response = server.verifyRegistrationInfo(regInfo);
         if (response) {
             Log.d(TAG, "User verified on server, registering user locally");
-            registerUser(reg_info);
+            registerUser(regInfo);
             return true;
         }
         return false;
     }
 
-    private void registerUser(Registration reg_info) {
-        User user_info = new User(
-                reg_info.getStudentID(),
-                reg_info.getName(),
-                reg_info.getGradeLevel(),
-                reg_info.getEmail()
+    private void registerUser(Registration regInfo) {
+        User userInfo = new User(
+                regInfo.getStudentID(),
+                regInfo.getName(),
+                regInfo.getGradeLevel(),
+                regInfo.getEmail()
         );
 
         //TO-DO: Save to Database

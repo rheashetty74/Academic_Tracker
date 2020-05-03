@@ -1,5 +1,6 @@
 package com.iit.academictracker;
 
+import com.iit.academictracker.data_models.Login;
 import com.iit.academictracker.data_models.Registration;
 
 import java.util.ArrayList;
@@ -11,16 +12,38 @@ import java.util.ArrayList;
 
 public class SchoolServer {
 
-    private ArrayList<Registration> registered_students;
+    private ArrayList<Registration> registeredStudents;
 
     public SchoolServer() {
-        registered_students = new ArrayList<>();
+        registeredStudents = new ArrayList<>();
         populateRegisteredStudents();
     }
 
-    public boolean verifyRegistrationInfo(Registration reg_info) {
-        for (Registration students : registered_students) {
-            if (reg_info.getStudentID().equals(students.getStudentID())) {
+    public boolean verifyRegistrationInfo(Registration regInfo) {
+        String studentID = regInfo.getStudentID();
+        String name = regInfo.getName();
+        String email = regInfo.getEmail();
+        String gradeLevel = regInfo.getGradeLevel();
+
+        for (Registration students : registeredStudents) {
+            //TO-DO: override comparator to compare both objects
+            if (students.getStudentID().equals(studentID) &&
+                    students.getName().equals(name) &&
+                    students.getEmail().equals(email) &&
+                    students.getGradeLevel().equals(gradeLevel)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean verifyLoginInfo(Login loginInfo) {
+        String email = loginInfo.getEmail();
+        String password = loginInfo.getPassword();
+
+        for (Registration students : registeredStudents) {
+            if (students.getEmail().equals(email) &&
+                    students.getPassword().equals(password)) {
                 return true;
             }
         }
@@ -28,10 +51,10 @@ public class SchoolServer {
     }
 
     private void populateRegisteredStudents() {
-        registered_students.add(new Registration("1", "Rhea", "Masters", "rhea@iit.com"));
-        registered_students.add(new Registration("2", "Rupa", "Masters", "rupa@iit.com"));
-        registered_students.add(new Registration("3", "Sharan", "Masters", "sharan@iit.com"));
-        registered_students.add(new Registration("4", "Jordan", "PhD", "jordan@iit.com"));
-        registered_students.add(new Registration("5", "Nico", "Freshman", "nico@iit.com"));
+        registeredStudents.add(new Registration("1", "Rhea", "Masters", "rhea@iit.edu", "rhea123"));
+        registeredStudents.add(new Registration("2", "Rupa", "Masters", "rupa@iit.edu", "rupa123"));
+        registeredStudents.add(new Registration("3", "Sharan", "Masters", "sharan@iit.edu", "sharan123"));
+        registeredStudents.add(new Registration("4", "Jordan", "PhD", "jordan@iit.edu", "jordan123"));
+        registeredStudents.add(new Registration("5", "Nico", "Freshman", "nico@iit.edu", "nico123"));
     }
 }

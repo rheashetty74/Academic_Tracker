@@ -8,13 +8,6 @@ public class Registration {
     private String email;
     private String password;
 
-    public Registration(String studentID, String name, String gradeLevel, String email) {
-        this.name = name;
-        this.gradeLevel = gradeLevel;
-        this.studentID = studentID;
-        this.email = email;
-    }
-
     public Registration(String studentID, String name, String gradeLevel, String email, String password) {
         this.name = name;
         this.gradeLevel = gradeLevel;

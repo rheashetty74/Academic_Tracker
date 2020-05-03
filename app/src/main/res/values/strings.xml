@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Academic Tracker</string>
     <string name="register">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="grade_level">Grade Level</string>
+    <string name="student_id">Student ID</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="sign_up_text">Don\'t have an account? Sign Up here:</string>
+    <string name="login_error">Error: Email and/or Password incorrect. Please Try Again</string>
 </resources>
