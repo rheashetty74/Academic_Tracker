@@ -1,6 +1,8 @@
 package com.iit.academictracker.data_models;
 
-public class Notes {
+import java.io.Serializable;
+
+public class Notes implements Serializable {
     private String id;
     private String title;
     private String content;

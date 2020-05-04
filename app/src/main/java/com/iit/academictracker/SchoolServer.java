@@ -26,7 +26,7 @@ public class SchoolServer {
         String gradeLevel = regInfo.getGradeLevel();
 
         for (Registration students : registeredStudents) {
-            //TO-DO: override comparator to compare both objects
+            //TODO: override comparator to compare both objects
             if (students.getStudentID().equals(studentID) &&
                     students.getName().equals(name) &&
                     students.getEmail().equals(email) &&

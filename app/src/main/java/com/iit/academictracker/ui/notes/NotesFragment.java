@@ -1,5 +1,6 @@
 package com.iit.academictracker.ui.notes;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.iit.academictracker.R;
 import com.iit.academictracker.data_models.Notes;
 
@@ -48,11 +50,22 @@ public class NotesFragment extends Fragment implements NotesListAdapter.NotesIte
                 notesListAdapter.setNotesList(notes);
             }
         });
+
+        FloatingActionButton fab = root.findViewById(R.id.add_note);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NoteDisplayActivity.class);
+                startActivity(intent);
+            }
+        });
         return root;
     }
 
     @Override
     public void onNoteClicked(View v, int position) {
-        Toast.makeText(getContext(), "Title: " + notes.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), NoteDisplayActivity.class);
+        intent.putExtra(NoteDisplayActivity.EXTRA_NOTE, notes.get(position));
+        startActivity(intent);
     }
 }

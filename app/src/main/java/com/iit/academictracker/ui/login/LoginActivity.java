@@ -63,5 +63,5 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    //TO-DO: front end verification
+    //TODO: front end verification
 }

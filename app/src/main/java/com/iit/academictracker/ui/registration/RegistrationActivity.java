@@ -53,7 +53,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-        //TO-DO: Front end verification
+        //TODO: Front end verification
     }
 
 

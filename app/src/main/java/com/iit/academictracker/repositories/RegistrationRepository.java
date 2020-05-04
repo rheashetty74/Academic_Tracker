@@ -38,7 +38,7 @@ public class RegistrationRepository {
                 regInfo.getEmail()
         );
 
-        //TO-DO: Save to Database
+        //TODO: Save to Database
     }
 
 }

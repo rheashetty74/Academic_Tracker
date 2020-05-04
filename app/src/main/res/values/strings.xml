@@ -21,4 +21,6 @@
     <string name="grades">Grades</string>
     <string name="description">Description</string>
     <string name="add">Add</string>
+    <string name="title">Title</string>
+    <string name="add_your_notes_here">Add your notes here...</string>
 </resources>
