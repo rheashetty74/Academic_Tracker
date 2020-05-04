@@ -39,6 +39,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(gradesListAdapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 LinearLayoutManager.VERTICAL);
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         homeViewModel.getDescription().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
