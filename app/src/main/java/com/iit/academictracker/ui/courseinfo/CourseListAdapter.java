@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.iit.academictracker.R;
@@ -31,12 +32,12 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Co
     // you provide access to all the views for a data item in a view holder
     public static class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
-        public TextView textView;
+        TextView textView;
         CourseListItemClickListener listener;
 
-        public CourseViewHolder(View itemView, CourseListItemClickListener listener) {
+        CourseViewHolder(View itemView, CourseListItemClickListener listener) {
             super(itemView);
-            textView = itemView.findViewById(R.id.course_list_item);
+            textView = itemView.findViewById(R.id.list_item);
             itemView.setOnClickListener(this);
             this.listener = listener;
         }
@@ -47,18 +48,19 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Co
         }
     }
 
-    public void setCourses(ArrayList<CourseInfo> courses) {
+    void setCourses(ArrayList<CourseInfo> courses) {
         this.courses = courses;
         notifyDataSetChanged();
     }
 
     // Create new views (invoked by the layout manager)
+    @NonNull
     @Override
     public CourseListAdapter.CourseViewHolder onCreateViewHolder(ViewGroup parent,
                                                                  int viewType) {
 
         LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.template_course_info, parent, false);
+                .inflate(R.layout.template_list_info, parent, false);
         return new CourseViewHolder(v, listener);
     }
 

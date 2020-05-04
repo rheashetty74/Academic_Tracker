@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d(TAG, "password: "+password.getText().toString());
                 Login loginInfo = new Login(email.getText().toString(),
                         password.getText().toString());
-                boolean response = true; //loginViewModel.verifyLoginInfo(loginInfo);
+                boolean response = loginViewModel.verifyLoginInfo(loginInfo);
                 if (response) {
                     Intent intent = new Intent(LoginActivity.this, CourseInfoActivity.class);
                     startActivity(intent);

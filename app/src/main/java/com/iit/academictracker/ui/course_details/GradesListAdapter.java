@@ -18,12 +18,13 @@ public class GradesListAdapter extends RecyclerView.Adapter<GradesListAdapter.Gr
 
     private ArrayList<Assignment> assignments;
 
+    @NonNull
     @Override
     public GradesListAdapter.GradesViewHolder onCreateViewHolder(ViewGroup parent,
                                                                  int viewType) {
 
         LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.template_course_info, parent, false);
+                .inflate(R.layout.template_list_info, parent, false);
         return new GradesListAdapter.GradesViewHolder(v);
     }
 
@@ -39,12 +40,12 @@ public class GradesListAdapter extends RecyclerView.Adapter<GradesListAdapter.Gr
         return assignments.size();
     }
 
-    public class GradesViewHolder extends RecyclerView.ViewHolder {
+    class GradesViewHolder extends RecyclerView.ViewHolder {
 
         TextView grades;
-        public GradesViewHolder(@NonNull View itemView) {
+        GradesViewHolder(@NonNull View itemView) {
             super(itemView);
-            grades = itemView.findViewById(R.id.course_list_item);
+            grades = itemView.findViewById(R.id.list_item);
         }
     }
 
