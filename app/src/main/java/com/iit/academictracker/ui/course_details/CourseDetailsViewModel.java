@@ -1,4 +1,4 @@
-package com.iit.academictracker.ui.home;
+package com.iit.academictracker.ui.course_details;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -8,13 +8,13 @@ import com.iit.academictracker.data_models.Assignment;
 
 import java.util.ArrayList;
 
-public class HomeViewModel extends ViewModel {
+public class CourseDetailsViewModel extends ViewModel {
 
     private MutableLiveData<String> description;
     private MutableLiveData<String> deadline;
     private MutableLiveData<ArrayList<Assignment>> assignments;
 
-    public HomeViewModel() {
+    public CourseDetailsViewModel() {
         description = new MutableLiveData<>();
         deadline = new MutableLiveData<>();
         assignments = new MutableLiveData<>();

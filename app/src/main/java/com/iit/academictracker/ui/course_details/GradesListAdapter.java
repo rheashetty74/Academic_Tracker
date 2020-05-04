@@ -1,4 +1,4 @@
-package com.iit.academictracker.ui.home;
+package com.iit.academictracker.ui.course_details;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -7,21 +7,21 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.iit.academictracker.ui.home.HomeFragment"
+        android:name="com.iit.academictracker.ui.course_details.CourseDetailsFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_course_details" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.iit.academictracker.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_notes"
+        android:name="com.iit.academictracker.ui.notes.NotesFragment"
         android:label="@string/title_notes"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_notes" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.iit.academictracker.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_discussions"
+        android:name="com.iit.academictracker.ui.discussions.DiscussionsFragment"
         android:label="@string/title_discussion"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_discussions" />
 
     <fragment
         android:id="@+id/navigation_calendar"

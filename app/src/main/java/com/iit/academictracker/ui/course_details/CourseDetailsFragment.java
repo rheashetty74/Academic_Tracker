@@ -1,4 +1,4 @@
-package com.iit.academictracker.ui.home;
+package com.iit.academictracker.ui.course_details;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,16 +20,16 @@ import com.iit.academictracker.data_models.Assignment;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class CourseDetailsFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private CourseDetailsViewModel courseDetailsViewModel;
     private ArrayList<Assignment> assignments;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        courseDetailsViewModel =
+                ViewModelProviders.of(this).get(CourseDetailsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_course_details, container, false);
         final GradesListAdapter gradesListAdapter = new GradesListAdapter();
 
         final TextView courseDescription = root.findViewById(R.id.course_description);
@@ -41,21 +41,21 @@ public class HomeFragment extends Fragment {
                 LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-        homeViewModel.getDescription().observe(getViewLifecycleOwner(), new Observer<String>() {
+        courseDetailsViewModel.getDescription().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 courseDescription.setText(s);
             }
         });
 
-        homeViewModel.getDeadline().observe(getViewLifecycleOwner(), new Observer<String>() {
+        courseDetailsViewModel.getDeadline().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 upcomingDeadlines.setText(s);
             }
         });
 
-        homeViewModel.getAssignments().observe(getViewLifecycleOwner(), new Observer<ArrayList<Assignment>>() {
+        courseDetailsViewModel.getAssignments().observe(getViewLifecycleOwner(), new Observer<ArrayList<Assignment>>() {
             @Override
             public void onChanged(ArrayList<Assignment> assignments) {
                     gradesListAdapter.setGradesList(assignments);
