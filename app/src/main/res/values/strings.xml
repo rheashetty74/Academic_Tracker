@@ -16,4 +16,5 @@
     <string name="title_calendar">Calendar</string>
     <string name="course_list">Course List</string>
     <string name="semester_spring_2020">Spring 2020</string>
+    <string name="course_list_item">Course List Item</string>
 </resources>

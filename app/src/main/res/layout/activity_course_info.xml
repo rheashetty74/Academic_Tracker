@@ -11,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:textSize="20sp"
+        android:text="@string/semester_spring_2020"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +26,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/text_home"/>
+        app:layout_constraintTop_toBottomOf="@id/text_home"
+        tools:listitem="@layout/template_course_info"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
